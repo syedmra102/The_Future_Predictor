@@ -1,0 +1,79 @@
+def print_questions():
+    print("=" * 150)
+    print(f"\nYOUR FUTURE MAKER".center(150))
+    print("=" * 150)
+
+print_questions()
+
+
+while True:
+    try:
+        Your_field = input("\nHello, Making your future bright!! In which Field do You want to master? ")
+        
+        
+        if Your_field.strip() and any(char.isalpha() for char in Your_field):
+            print(f"\nYour selected Field is {Your_field}")
+            break
+        else:
+            print("\nPlease enter a valid field name (text only)")
+            
+    except:
+        print("\nPlease enter your field")
+        continue
+
+
+while True:
+    try:
+        Skills_percentage = int(input("\nIn how much % students you want to master in this field? like (1%, 10%): "))
+        
+        
+        if Skills_percentage <= 0 or Skills_percentage > 100:
+            print("\nPlease enter a number between 1 to 100")
+            continue
+            
+        elif Skills_percentage > 1 or Skills_percentage <101:
+            print(f"\nAmazing!! {Skills_percentage}% is a great percentage")
+            break
+            
+        else:
+            print(f"\nYou selected top {Skills_percentage}% - good choice!")
+            break
+            
+    except ValueError:
+        print("\nPlease enter a number between 1 to 100")
+        continue
+
+
+while True:
+    try:
+        Daily_time = float(input("\nHow many hours are you ready to spend in this field daily?: "))
+        
+        
+        if Daily_time <= 0 :
+            print("\nPlease enter a number between 1 to 24")
+            continue
+            
+        elif Daily_time > 0 or Daily_time < 24 :
+            print(f"\nAmazing!! {Daily_time} hours is excellent for reaching your dream destination!")
+            break
+            
+        else:
+            print(f"\n{Daily_time} hours daily is a good start!")
+            break
+            
+    except ValueError:
+        print("\nPlease enter a number between 1 to 24")
+        continue
+
+def print_Formulas():
+    
+    Formula_1_value = 10000 * (Skills_percentage / 100)
+    Formula_2_value = Formula_1_value / Daily_time
+
+    
+    Formula_2 = f"{Formula_2_value:.1f}"
+    print("=" * 150)
+    print(f"\nYou need {Formula_2} hours to reach top {Skills_percentage}% in {Your_field},\n\nI hope you get it very soon!!")
+    print("=" * 150)
+
+print_Formulas()
